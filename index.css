@@ -98,14 +98,31 @@ button:hover {
     margin: 10px auto; /* Centered with auto margins */
 }
 
-@media screen and (min-width: 720px) and (max-height: 1560px) {
+@media screen and (min-width: 720px) and (max-width: 1024px) {
     #container {
-        width: 80%;
+        width: 80%; /* Wider container for medium screens */
     }
 
     #intro {
-        font-size: 4em;
-        margin: 40px 0 60px 0;
+        font-size: 3em; /* Adjusted font size */
+    }
+
+    #result {
+        font-size: 2.5em; /* Adjust result font size */
+    }
+
+    #js-score {
+        font-size: 1.5em; /* Larger score font */
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    #container {
+        width: 60%; /* Even wider for larger screens */
+    }
+
+    #intro {
+        font-size: 3.5em; /* Larger font size */
     }
 
     .img {
@@ -114,29 +131,11 @@ button:hover {
     }
 
     #result {
-        font-size: 3em;
-        margin: 60px 0 80px 0;
-        padding-left: 40px;
-    }
-
-    .move_img {
-        width: 20%;
-    }
-
-    #moves {
-        font-size: 2.5em;
+        font-size: 3em; /* Larger result font */
     }
 
     #js-score {
-        margin-top: 15%;
-        padding-left: 50px;
-        font-size: 2.4em;
-    }
-
-    #reset {
-        width: 35%;
-        margin-left: 50px;
-        margin-top: 40px;
+        font-size: 1.8em; /* Adjusted score font */
     }
 }
 
