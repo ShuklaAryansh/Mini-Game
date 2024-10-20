@@ -7,7 +7,7 @@
 html, body {
     margin: 0;
     padding: 0;
-    height: 100%; /* Ensures full height for background color */
+    height: 100%; 
     background-color: rgb(255, 157, 0);
 }
 
@@ -15,14 +15,14 @@ html, body {
     position: absolute;
     top: 50%;
     left: 50%;
-    height: auto; /* Allow height to adjust based on content */
-    width: 90%; /* Default width for mobile */
-    max-width: 600px; /* Maximum width for larger screens */
+    height: auto; 
+    width: 90%; 
+    max-width: 600px;
     border: 2px solid black;
     border-radius: 30px;
     transform: translate(-50%, -50%);
     background-color: black;
-    padding: 20px; /* Add padding for content spacing */
+    padding: 20px;
 }
 
 #intro {
@@ -51,13 +51,13 @@ button {
     height: 30%;
     width: 30%;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+    transition: background-color 0.3s, transform 0.3s; 
 }
 
 button:hover {
     background-color: white;
     color: black;
-    transform: scale(1.05); /* Slightly enlarges the button on hover */
+    transform: scale(1.05); 
 }
 
 #result {
@@ -70,7 +70,7 @@ button:hover {
 .move_img {
     height: 15%;
     width: 15%;
-    margin: 0 5px; /* Space between move images */
+    margin: 0 5px; 
 }
 
 #moves {
@@ -87,42 +87,42 @@ button:hover {
 }
 
 #reset {
-    width: 100%; /* Full width for the reset button */
-    max-width: 200px; /* Limit max width */
-    height: 40px; /* Fixed height */
+    width: 100%; 
+    max-width: 200px;
+    height: 40px; 
     border-radius: 10px;
     color: black;
     background-color: white;
     font-size: 1.2em;
     font-weight: 500;
-    margin: 10px auto; /* Centered with auto margins */
+    margin: 10px auto; 
 }
 
 @media screen and (min-width: 720px) and (max-width: 1024px) {
     #container {
-        width: 80%; /* Wider container for medium screens */
+        width: 80%; 
     }
 
     #intro {
-        font-size: 3em; /* Adjusted font size */
+        font-size: 3em; 
     }
 
     #result {
-        font-size: 2.5em; /* Adjust result font size */
+        font-size: 2.5em; 
     }
 
     #js-score {
-        font-size: 1.5em; /* Larger score font */
+        font-size: 1.5em;
     }
 }
 
 @media screen and (min-width: 1025px) {
     #container {
-        width: 60%; /* Even wider for larger screens */
+        width: 60%; 
     }
 
     #intro {
-        font-size: 3.5em; /* Larger font size */
+        font-size: 3.5em; 
     }
 
     .img {
@@ -131,43 +131,43 @@ button:hover {
     }
 
     #result {
-        font-size: 3em; /* Larger result font */
+        font-size: 3em; 
     }
 
     #js-score {
-        font-size: 1.8em; /* Adjusted score font */
+        font-size: 1.8em; 
     }
 }
 
 @media screen and (max-width: 480px) {
     #container {
-        width: 90%; /* Adjust for smaller screens */
+        width: 90%; 
     }
 
     #intro {
-        font-size: 3em; /* Smaller font size for mobile */
+        font-size: 3em; 
     }
 
     .img {
-        width: 100%; /* Full width for images on mobile */
-        height: auto; /* Maintain aspect ratio */
+        width: 100%; 
+        height: auto; 
     }
 
     #result {
-        font-size: 1.4em; /* Smaller font size for mobile */
+        font-size: 1.4em; 
     }
 
     .move_img {
-        width: 15%; /* Keep images small */
+        width: 15%;
     }
 
     #js-score {
-        font-size: 1.2em; /* Smaller score font */
+        font-size: 1.2em; 
     }
 
     #reset {
-        width: 100%; /* Full width for reset button */
-        max-width: 200px; /* Limit max width */
-        margin: 20px auto; /* Centered */
+        width: 100%; 
+        max-width: 200px; 
+        margin: 20px auto; 
     }
 }
