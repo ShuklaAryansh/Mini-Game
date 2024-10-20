@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Project</title>
+    <link rel="stylesheet" href="index.css">
+
+
+</head>
+<body>
+    <div id="container">
+        <div id="intro">ROCK PAPER SCISSORS </div>
+        <div id="options">
+            <button  onclick=" result= check('Rock',sys_choose());tri_combo_fun() "><img class="img" src="Rock.png" alt="rock png img"></button> 
+            <button  onclick=" result= check('Paper',sys_choose());tri_combo_fun() "><img class="img" src="Paper.png" alt="paper png img"></button>
+            <button  onclick=" result= check('Scissors',sys_choose());tri_combo_fun()"><img class="img" src="Scissors.png" alt="scissors png img"></button>
+        </div>
+
+        <p id="result"></p>
+        <p class="moves" id="moves">You <img class="move_img" src="Rock.png" alt="moves img"> <img class="move_img" src="Scissors.png" alt="moves img"> System</p>
+        <p id="js-score"></p>    
+        <button id="reset" onclick="reset_button()">Reset Score</button>
+    </div>
+
+    <script>
+        
+        const score = JSON.parse(localStorage.getItem('show_score')) || { win: 0, tie: 0, loss: 0 };
+        let result; 
+        document.querySelector('#js-score').innerText = `Wins:${score.win},Ties:${score.tie},Losses:${score.loss}`;
+
+        function sys_choose()
+        {
+            ran_num = Math.random();
+            
+            if(ran_num>=0 && ran_num<1/3)
+            { return 'Rock'; }
+
+            else if(ran_num>=1/3 && ran_num<2/3)
+            { return 'Paper';}
+
+            else if(ran_num>=2/3 && ran_num<=1)
+            { return 'Scissors';}
+        }
+        
+        function check(user_click,sys_choose)
+        {   
+
+            //To check how wins
+            if(user_click==='Rock' && sys_choose==='Rock')
+            {   score.tie+= 1;                
+                const result1 = "It's a Tie ";
+                return {user_click,sys_choose,result1};}
+            else if(user_click==='Rock' && sys_choose==='Paper')
+            {   score.loss+= 1;                
+                const result1 = 'You Loose';
+                return {user_click,sys_choose,result1};}
+            else if(user_click==='Rock' && sys_choose==='Scissors')
+            {   score.win+= 1;                
+                const result1 = 'You Won';
+                return {user_click,sys_choose,result1} ;}
+
+
+            if(user_click==='Paper' && sys_choose==='Rock')
+            {   score.win+= 1;                
+                const result1 = 'You Win';
+                return {user_click,sys_choose,result1} ;}
+            else if(user_click==='Paper' && sys_choose==='Paper')
+            {   score.tie+= 1;                
+                const result1 = "It's a Tie ";
+                return {user_click,sys_choose,result1};}
+            else if(user_click==='Paper' && sys_choose==='Scissors')
+            {   score.loss+= 1;                
+                const result1 = 'You loose';
+                return {user_click,sys_choose,result1};}
+
+
+            if(user_click==='Scissors' && sys_choose==='Rock')
+            {   score.loss+= 1;                
+                const result1 = 'You loose';
+                return {user_click,sys_choose,result1};}
+            else if(user_click==='Scissors' && sys_choose==='Paper')
+            {   score.win+= 1;                
+                const result1 = 'You Won';
+                return {user_click,sys_choose,result1};}
+            else if(user_click==='Scissors' && sys_choose==='Scissors')
+            {   score.tie+= 1;
+                const result1 = "It's a tie";
+                return {user_click,sys_choose,result1};}
+            
+        }
+
+        function tri_combo_fun()
+        {
+            update_local_storage();
+            js_score_update();
+            display_moves_result()
+        }
+
+        function update_local_storage()
+        { localStorage.setItem('show_score', JSON.stringify(score));
+           
+        }
+
+        function js_score_update(){document.querySelector('#js-score').innerHTML = `Wins:${score.win},Ties:${score.tie},Losses:${score.loss}`;}
+
+        function display_moves_result()
+        { document.querySelector('#result').innerText = result.result1;
+          document.querySelector('#moves').innerHTML = `You <img class="move_img" src="${result.user_click}.png" alt="moves img"> <img class="move_img" src="${result.sys_choose}.png" alt="moves img"> System `;  
+        }
+
+        function reset_button()
+        {   score.win=0;score.tie=0;score.loss=0;
+            localStorage.removeItem('show_score');
+            js_score_update();
+            document.querySelector('#result').innerText = '';
+            document.querySelector('#moves').innerHTML = '';  
+        }
+
+    </script>
+</body>
+</html>

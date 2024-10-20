@@ -1,0 +1,114 @@
+*{margin: 0;
+padding: 0;
+box-sizing: border-box;}
+
+html,body{
+    margin: 100%;
+    padding: 100%;
+    background-color: rgb(255, 157, 0);
+}
+
+#container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 75%;
+    width: 35%;
+    border: 2px solid black;
+    border-radius: 30px;
+    transform: translate(-50%,-50%);
+    background-color: black;
+}
+
+#intro{color: white;
+text-align: center;
+font-size: 2em;
+margin-top: 10px;
+margin-bottom: 30px;}
+
+#options{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+.img{
+    height: 80%;
+    width: 70%;
+}
+
+button{
+    background-color: black;
+    border: 2px solid white;    
+    border-radius: 20%;
+    padding: 5px;
+    height: 30%;
+    width: 30%;
+    cursor: pointer;
+}
+
+#result{
+    color: white;
+    
+    font-size: 1.6em;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    padding-left: 20px;}
+
+.move_img{height: 15%;width: 15%;}
+#moves{color:white;display: flex;justify-content: center;}
+#js-score{color: white;margin-top: 10%;padding-left: 20px;font-size: 1.2em;}
+
+#reset{
+    width: 30%;
+    height: 5%;
+    border-radius: 10px;
+    color:black;
+    background-color: white;
+    font-size: 1.2em;
+    font-weight: 500;
+    margin-left:18px;
+    margin-top: 10px;
+    padding-bottom: 28px;
+    }
+
+@media screen and (min-width:720px) and (max-height:1560px){
+
+    html,body{ background-color: rgb(255, 157, 0);}
+
+    #container{ width: 80%;}
+
+    #intro{color: white;
+        font-size: 4em;
+        margin-top: 40px;
+        margin-bottom: 60px;
+    }
+    
+    .img{
+        height: 90%;
+        width: 80%;
+        }
+
+    #result{
+        font-size: 3em;
+        margin-top: 60px;
+        margin-bottom: 80px;
+        padding-left: 40px;
+    }
+            
+    .move_img{width: 20%;}        
+    #moves{font-size: 2.5em;}
+
+    #js-score{margin-top: 15%;padding-left: 50px;font-size: 2.4em;}
+
+    #reset{
+        width: 35%;
+        font-size: 1.2em;
+        font-weight: 600;
+        margin-left:50px;
+        margin-top: 40px;
+        padding-bottom: 10px;
+        }
+    
+}
+    
+   
