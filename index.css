@@ -71,7 +71,7 @@ button{
     padding-bottom: 28px;
     }
 
-@media screen and (min-width:720px) and (max-height:1560px){
+@media screen and (max-width:1500px) and (max-height:1560px){
 
     html,body{ background-color: rgb(255, 157, 0);}
 
